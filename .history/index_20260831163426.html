@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Structure–Color Disentangled Anime Hair Synthesis via Flow Lines - SIGGRAPH Asia 2026">
+  <meta name="description" content="A research paper on structure-color disentangled anime hair synthesis via flow lines">
+  <meta name="keywords" content="anime, hair synthesis, computer graphics">
+  <meta name="author" content="Tianyu Zhang, I-Chao Shen, Haoran Xie">
+  
+  <title>FlowLines</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+  
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <style>
+    * {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    body {
+      background-color: #fafafa;
+    }
+    
+    .publication-title {
+      font-size: 2.5rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 20px !important;
+    }
+    
+    .publication-authors {
+      font-size: 1.1rem !important;
+    }
+    
+    .author-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0 8px;
+      margin-bottom: 4px;
+    }
+
+    .conference-row {
+      margin-top: 6px;
+      margin-bottom: 8px;
+    }
+
+    .author-block {
+      margin: 5px 10px;
+    }
+    
+    .author-block a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    
+    .author-block a:hover {
+      text-decoration: underline;
+    }
+    
+    .author-block sup {
+      color: #666;
+    }
+    
+    .eql-cntrb {
+      display: block;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 10px;
+    }
+    
+    .publication-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    
+    .link-block {
+      display: inline-block;
+      flex: 0 0 auto;
+    }
+    
+    .external-link {
+      background-color: #363636 !important;
+      color: white !important;
+      border-radius: 24px !important;
+      padding: 12px 24px !important;
+      font-weight: 600;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+      min-width: 110px;
+      height: 48px;
+    }
+    
+    .external-link:hover {
+      background-color: #1a1a1a !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .external-link .icon {
+      display: inline-flex;
+      align-items: center;
+      font-size: 1.2em;
+    }
+    
+    .container.is-max-desktop {
+      max-width: 1100px !important;
+      width: 100%;
+    }
+
+    .teaser {
+      background-color: white;
+      padding: 40px 0;
+    }
+
+    .teaser .hero-body {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    
+    .teaser figure.image {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .teaser img {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 100%;
+      height: auto;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    .teaser .subtitle {
+      margin-top: 20px;
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .method-figure {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .method-figure img {
+      width: 100%;
+      max-width: 1100px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    .result-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .result-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .result-item figure {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0;
+    }
+
+    .result-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .result-item p {
+      max-width: 1000px;
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .hero {
+      background-color: white;
+      padding: 60px 0;
+    }
+    
+    .hero.is-light {
+      background-color: #f5f5f5;
+    }
+    
+    .results-section,
+    .results-section.hero.is-light,
+    .bibtex-section,
+    .section {
+      background-color: white;
+      padding: 60px 0;
+    }
+
+    .dataset-section,
+    .dataset-section.hero.is-light {
+      background-color: #f5f5f5;
+      padding: 60px 0;
+    }
+
+    .dataset-section .title.is-3,
+    .results-section .title.is-3 {
+      margin-bottom: 20px !important;
+    }
+
+    .abstract-section,
+    .method-section {
+      background-color: white;
+    }
+    
+    .section.hero.is-light {
+      background-color: #f5f5f5;
+    }
+    
+    .title.is-3 {
+      font-size: 1.8rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 30px !important;
+      text-align: center;
+    }
+    
+    .content {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #333;
+    }
+    
+    .content p {
+      margin-bottom: 15px;
+    }
+    
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    
+    .bibtex-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .copy-bibtex-btn {
+      background-color: #363636;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.2s;
+    }
+    
+    .copy-bibtex-btn:hover {
+      background-color: #1a1a1a;
+    }
+    
+    #bibtex-code {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #0066cc;
+      overflow-x: auto;
+    }
+    
+    .footer {
+      background-color: white;
+      padding: 40px 0;
+      border-top: 1px solid #e0e0e0;
+    }
+    
+    .footer .content {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+    }
+    
+    .footer a {
+      color: #0066cc;
+    }
+    
+    @media (max-width: 768px) {
+      .publication-title {
+        font-size: 1.8rem !important;
+      }
+      
+      .publication-links {
+        gap: 8px;
+      }
+      
+      .external-link {
+        padding: 10px 16px !important;
+        font-size: 0.9rem;
+        min-width: 100px;
+        height: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<main id="main-content">
+  <!-- Hero section with paper title and authors -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- Paper Title -->
+            <h1 class="title is-1 publication-title">Structure–Color Disentangled Anime Hair Synthesis via Flow Lines</h1>
+            
+            <!-- Authors -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://zty0304.github.io/" target="_blank">Tianyu Zhang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://jdily.github.io/" target="_blank">I-Chao Shen</a><sup>2,*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.jaist.ac.jp/~xie/index.html" target="_blank">Haoran Xie</a><sup>1,3,*</sup>
+              </span>
+            </div>
+            
+            <!-- Institution and Conference -->
+            <div class="is-size-5 publication-authors">
+              <div class="author-row">
+                <span class="author-block"><sup>1</sup>Japan Advanced Institute of Science and Technology</span>
+                <span class="author-block"><sup>2</sup>The University of Tokyo</span>
+                <span class="author-block"><sup>3</sup>Waseda University</span>
+              </div>
+              <div class="author-row conference-row">
+                <span class="author-block">SIGGRAPH Asia 2026</span>
+              </div>
+              <span class="eql-cntrb"><sup>*</sup>Co-Corresponding Authors</span>
+            </div>
+            
+            <!-- Links to paper, code, etc -->
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              
+              <span class="link-block">
+                <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              
+              <span class="link-block">
+                <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+              <span class="link-block">
+                <a href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser Image/Video -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <figure class="image is-16by9">
+          <img src="./images/teaser.jpg" alt="Teaser image" style="border-radius: 8px;">
+        </figure>
+        <h2 class="subtitle has-text-centered">
+          This is a placeholder for your teaser image or video. Replace with your actual research visualization showing the main contribution of your paper.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+            Anime hairstyles convey the personality and emotion of a character. Existing input modalities are not well suited for anime hair editing, as they may fail to capture the fine-grained wisp structure that characterizes anime hairstyles. To solve this issue, we introduce flow line, a sparse representation that directly encodes wisp geometry and color intent. Flow lines align naturally with the loose gestural strokes used in early-stage anime character design.
+            We further present a flow line guided hair synthesis framework for anime characters, featuring dual-LoRA design with dedicated structure and color branches, combined with region-aware supervision, to prevent interference between geometry and appearance during hairstyle synthesis.
+            To support training and evaluation, we construct a novel dataset consisting of paired character images before and after hairstyle synthesis, together with flow line sketches specifying the desired hairstyle.
+            We compare our method with existing methods on diverse flow lines and hairstyles, and the results show that our method synthesizes visually natural and high-fidelity anime hair.
+            Finally, we introduce the potential applications of hair transfer and manipulation, in addition to a flow line extraction method that enables these applications with our hair synthesis framework. 
+            We believe our work establishes a practical and friendly pipeline for controllable anime hair synthesis, with potential to support broader sketch-guided content generation tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method Section with Image -->
+  <section class="section method-section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Method</h2>
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <figure class="image method-figure">
+            <img src="./images/fig4.jpg" alt="Method framework" style="border-radius: 8px;">
+          </figure>
+          <p class="has-text-centered" style="margin-top: 15px; font-size: 0.95rem; color: #666; line-height: 1.6; max-width: 1100px; margin-left: auto; margin-right: auto;">
+            <strong>Framework of our method.</strong>
+            Our framework then comprises two core components during fine-tuning: (a) Structure control, which regulates hair structure generation via LoRA injected into all layers; (b) Color control, which guides hair color generation through LoRA applied to specific layers together with mask-based supervision.
+            During inference, we apply the fine-tuned LoRAs and produce the output using the pre-edit image and the flow line image. 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dataset Section -->
+  <section class="section hero is-light dataset-section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Dataset</h2>
+      <div class="result-stack">
+        <div class="result-item">
+          <figure class="image">
+            <img src="./images/fig5.jpg" alt="data 1">
+          </figure>
+          <p><strong>Dataset construction pipeline.</strong> Images collected from the website, we preprocess them to obtain reference images, from which we derive pre-edit images via FLUX Kontext and flow line images via manual annotation.</p>
+        </div>
+        <div class="result-item">
+          <figure class="image">
+            <img src="./images/fig6.jpg" alt="data 2">
+          </figure>
+          <p><strong>Hair dataset statistics.</strong> Distribution of hair length categories (left) and hairstyle types (right) across the dataset.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="section results-section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Results</h2>
+      <div class="result-stack">
+        <div class="result-item">
+          <figure class="image">
+            <img src="./images/fig8.jpg" alt="Result 1">
+          </figure>
+          <p><strong>Comparison with existing methods using sketch input.</strong> Our method enables controllable editing of both hairstyle structure and color guided by the flow lines and preserves the character identity.</p>
+        </div>
+        <div class="result-item">
+          <figure class="image">
+            <img src="./images/fig10.jpg" alt="Result 2">
+          </figure>
+            <p class="has-text-centered"
+            style="margin-top: 15px; font-size: 0.95rem; color: #666; line-height: 1.6;">
+            <strong>Top:</strong> We show new hairstyle designs for characters used in anime production, highlighting the diversity and generalization capabilities of our method.
+            <br>
+            <strong>Bottom:</strong> We show flow line images of varying quality describing the same hairstyle and their results, demonstrating robustness to input quality.
+            </p>
+
+            <p class="has-text-centered"
+            style="margin-top: 4px; font-size: 0.72rem; color: #999;">
+            Copyright: &copy; Junpei Inuzuka, IMAGICA INFOS / Restaurant to Another World 2;
+            &copy; IIS-P / “Ponnomichi” Production Committee.
+            </p>
+        </div>
+        <div class="result-item">
+          <figure class="image">
+            <img src="./images/fig11.jpg" alt="Result 3">
+          </figure>
+          <p><strong>Ablation study.</strong> Given (a) the pre-edit image and (b) the flow line image, (c–e) show results of different ablated variants, while (f) shows the result of our full method.</p>
+        </div>
+        <div class="result-item">
+          <figure class="image">
+            <img src="./images/fig12.jpg" alt="Result 4">
+          </figure>
+          <p>\textbf{Hair transfer via aligned flow line guidance.} 
+    Flow line image extracted from the (a) reference hairstyle is aligned to the (c) pre-edit image and used to guide synthesis. 
+    This enables hairstyle transfer at the structural level rather than pixel-wise copying.
+    Furthermore, (c) and (d) show that the method produces consistent results under different color conditions, while preserving the underlying structure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BibTeX Citation -->
+  <section class="section bibtex-section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title is-3" style="margin: 0;">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@inproceedings{Zhang2026FlowLines,
+  title={Structure-Color Disentangled Anime Hair Synthesis via Flow Lines},
+  author={Tianyu Zhang and I-Chao Shen and Haoran Xie},
+  booktitle={SIGGRAPH Asia 2026 Conference Proceedings},
+  year={2026},
+  pages={},
+  doi={}
+}</code></pre>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-eight-fifths">
+          <div class="content has-text-centered">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              <br>
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+  function copyBibTeX() {
+    const bibtex = document.getElementById('bibtex-code');
+    const text = bibtex.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.copy-bibtex-btn');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-check"></i><span class="copy-text">Copied!</span>';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+      }, 2000);
+    }).catch(() => {
+      alert('Failed to copy BibTeX');
+    });
+  }
+</script>
+
+</body>
+</html>

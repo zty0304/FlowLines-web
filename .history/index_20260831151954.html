@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Academic Research Paper Project Page" />
+    <title>Your Paper Title</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="content">
+      <article class="paper">
+        <div class="title-block">
+          <h1>Structure–Color Disentangled Anime Hair Synthesis via Flow Lines</h1>
+
+          <div class="authors-block">
+            <div class="authors">
+              <span><a href="#">Author A</a><sup>*</sup></span>
+              <span><a href="#">Author B</a><sup>*</sup></span>
+              <span><a href="#">Author C</a><sup></sup></span>
+            </div>
+
+            <div class="affiliations">
+              <span>Institute A</span>
+              <span>Institute B</span>
+            </div>
+
+            <div class="notes">
+              <sup>*</sup><span>Indicates Equal Contribution</span>
+            </div>
+
+            <div class="links-row">
+              <a href="#" class="paper-link">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M2 1h7v1H3v11h10V8h1v6H2V1z"></path>
+                  <path d="M9 1v1h3.3L5.65 7.65l.7.7L13.3 3.3V6h1V1H9z"></path>
+                </svg>
+                <span>Paper</span>
+              </a>
+              <a href="#" class="code-link">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M4.927 5.427L6.06 4.294 2.354 0.588 1.22 1.721 4.927 5.427zm6.146 5.146l1.133 1.133 3.706-3.706-1.133-1.133-3.706 3.706zM1 8.54l7.072-7.072 4.596 4.596-7.072 7.072L1 8.54zm13.778-3.404l-1.414-1.414.707-.707 1.414 1.414-.707.707z"></path>
+                </svg>
+                <span>Code</span>
+              </a>
+              <a href="#" class="arxiv-link">
+                <span>arXiv</span>
+              </a>
+              <a href="#" class="dataset-link">
+                <span>🤗 Dataset</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="intro-section">
+          <figure class="intro-figure">
+            <div class="placeholder-img"></div>
+          </figure>
+
+          <p>
+            Model weights are a direct product of the objective, optimization procedure, and training
+            data. Users upload models to public repositories, e.g., Hugging Face, which are often
+            disorganized and lack metadata on model functionality, pre-training checkpoints, and
+            training data. Weight-space learning treats model repositories as datasets where each
+            model is a data point. It studies how to design metanetworks, a special kind of neural
+            networks that process the weights of other models.
+          </p>
+        </div>
+
+        <section class="paper-section">
+          <h2>Abstract</h2>
+          <p>
+            The increasing availability of public models begs the question: can we train neural networks
+            that use other networks as input? Such models allow us to study different aspects of a given
+            neural network, for example, determining the categories in a model's training dataset. However,
+            machine learning on model weights is challenging as they often exhibit significant variation
+            unrelated to the models' semantic properties. Here, we identify a key property of real-world
+            models: most public models belong to a small set of <em>Model Trees</em>, where all models within
+            a tree are fine-tuned from a common ancestor. Within each tree there is less nuisance variation.
+            To address computational challenges, we introduce <em>Probing Experts (ProbeX)</em>, a lightweight
+            method specifically designed to learn from the weights of a single hidden model layer.
+          </p>
+        </section>
+
+        <section class="paper-section">
+          <h2>Learning within Model Trees</h2>
+          <figure class="section-figure">
+            <div class="placeholder-img"></div>
+          </figure>
+          <p>
+            We conduct 4 motivating experiments that illustrate the benefits of learning within Model
+            Trees. In each experiment, we train a linear classifier to predict the classes a ViT model
+            was fine-tuned on. First, we show that learning within Model Trees is significantly simpler
+            by comparing a metanetwork trained on models from the same tree with one trained on models
+            from different trees. Next, we demonstrate positive transfer within the same tree by showing
+            that adding more models from the same tree improves the performance. Surprisingly, we observe
+            negative transfer between Model Trees, where adding samples from other trees degrades
+            performance on a single tree.
+          </p>
+        </section>
+
+        <section class="paper-section">
+          <h2>Largest Model Trees on Hugging Face</h2>
+          <div class="section-content">
+            <figure class="section-figure">
+              <div class="placeholder-img"></div>
+            </figure>
+            <p>
+              We show the 10 largest Model Trees on Hugging Face. Our insight is that learning an expert
+              for each tree greatly simplifies weight-space learning. This is a practical setting as a few
+              large Model Trees dominate the landscape.
+            </p>
+          </div>
+        </section>
+
+        <section class="paper-section">
+          <h2>Probing Experts (ProbeX)</h2>
+          <figure class="section-figure">
+            <div class="placeholder-img"></div>
+          </figure>
+          <p>
+            Unlike conventional probing methods that operate only on inputs and outputs, our lightweight
+            architecture scales weight-space learning to large models by probing hidden model layers.
+            ProbeX begins by passing a set of learned probes through the input weight matrix. A projection
+            matrix, shared between all probes, reduces the dimensionality of the probe responses, followed
+            by a non-linear activation. Each probe response is then mapped to a probe encoding via a
+            per-probe encoder matrix. We sum the probe encodings to obtain the final model encoding, which
+            the predictor head maps to the task output.
+          </p>
+        </section>
+
+        <section class="paper-section">
+          <h2>Results</h2>
+          <p>
+            ProbeX achieves state-of-the-art results on the task of training category prediction, accurately
+            identifying the specific classes within a model's training dataset. Excitingly, ProbeX can also
+            align fine-tuned Stable Diffusion weights with language representations. This capability enables
+            a new task: zero-shot model classification, where models are classified via a text prompt describing
+            their training data.
+          </p>
+          <figure class="section-figure">
+            <div class="placeholder-img"></div>
+          </figure>
+        </section>
+
+        <section class="paper-section bibtex-section">
+          <div class="bibtex-header">
+            <h2>BibTeX</h2>
+            <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+          </div>
+          <pre id="bibtex"><code>@inproceedings{yourpaper2026,
+  title = {Structure--Color Disentangled Anime Hair Synthesis via Flow Lines},
+  author = {Author A and Author B and Author C},
+  booktitle = {SIGGRAPH Asia 2026 Conference Proceedings},
+  year = {2026}
+}</code></pre>
+        </section>
+
+        <div class="footer-note">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io/">Nerfies</a> project page.
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

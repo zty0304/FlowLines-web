@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Project page for a research paper." />
+    <title>Your Paper Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="container nav-wrap">
+          <div class="brand">Project Page</div>
+          <nav>
+            <a href="#abstract">Abstract</a>
+            <a href="#method">Method</a>
+            <a href="#results">Results</a>
+            <a href="#citation">Citation</a>
+            <a href="#team">Team</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="container hero-inner">
+            <div class="hero-copy">
+              <div class="conference">SIGGRAPH Asia 2026</div>
+              <h1>Your Paper Title Goes Here</h1>
+              <div class="authors">
+                Author A<sup>1</sup>, Author B<sup>1,2</sup>, Author C<sup>2</sup>
+              </div>
+              <div class="affiliations">
+                <span>Institute A</span>
+                <span>Institute B</span>
+              </div>
+              <div class="actions">
+                <a href="https://example.com/paper.pdf" target="_blank" rel="noreferrer">Paper</a>
+                <a href="https://example.com/video" target="_blank" rel="noreferrer">Video</a>
+                <a href="https://github.com/yourname/yourrepo" target="_blank" rel="noreferrer">Code</a>
+                <a href="https://example.com/dataset" target="_blank" rel="noreferrer">Data</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="teaser-wrap">
+          <div class="container teaser-box">
+            <div class="teaser-grid"></div>
+            <div class="caption caption-left">Input</div>
+            <div class="caption caption-right">Output</div>
+          </div>
+        </section>
+
+        <section id="abstract" class="section">
+          <div class="container narrow">
+            <h2>Abstract</h2>
+            <p>
+              We present a method for ... Replace this paragraph with the real abstract.
+              The core idea is to ... while preserving ... Our approach demonstrates strong
+              performance on ... and yields a clear improvement over prior work.
+            </p>
+            <p>
+              The proposed framework combines ... to achieve ... with better efficiency,
+              robustness, and controllability under realistic conditions.
+            </p>
+          </div>
+        </section>
+
+        <section id="method" class="section alt-bg">
+          <div class="container narrow">
+            <h2>Method Overview</h2>
+            <div class="method-figure">
+              <div class="figure-placeholder"></div>
+            </div>
+            <p>
+              Our method consists of three components: ... First, ... Second, ... Third, ...
+              Together, these modules enable ... and maintain ...
+            </p>
+          </div>
+        </section>
+
+        <section id="results" class="section">
+          <div class="container narrow">
+            <h2>Results</h2>
+            <div class="result-grid">
+              <div class="result-card">
+                <div class="metric">+18.4%</div>
+                <div>improvement over the best baseline</div>
+              </div>
+              <div class="result-card">
+                <div class="metric">2.3×</div>
+                <div>faster inference</div>
+              </div>
+              <div class="result-card">
+                <div class="metric">95%</div>
+                <div>user preference in evaluation</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alt-bg">
+          <div class="container narrow">
+            <h2>Paper</h2>
+            <div class="resource-grid">
+              <a href="https://example.com/paper.pdf" target="_blank" rel="noreferrer" class="resource-item">
+                <span>📄</span>
+                <div>
+                  <strong>Paper</strong>
+                  <small>PDF</small>
+                </div>
+              </a>
+              <a href="https://example.com/video" target="_blank" rel="noreferrer" class="resource-item">
+                <span>🎬</span>
+                <div>
+                  <strong>Video</strong>
+                  <small>Supplementary video</small>
+                </div>
+              </a>
+              <a href="https://github.com/yourname/yourrepo" target="_blank" rel="noreferrer" class="resource-item">
+                <span>💻</span>
+                <div>
+                  <strong>Code</strong>
+                  <small>Implementation</small>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="citation" class="section">
+          <div class="container narrow">
+            <h2>BibTeX</h2>
+            <pre>@inproceedings{yourpaper2026,
+  title = {Your Paper Title Goes Here},
+  author = {Author A and Author B and Author C},
+  booktitle = {SIGGRAPH Asia 2026 Conference Proceedings},
+  year = {2026}
+}</pre>
+          </div>
+        </section>
+
+        <section id="team" class="section alt-bg">
+          <div class="container narrow">
+            <h2>Authors</h2>
+            <div class="team-grid">
+              <div class="person-card">
+                <div class="avatar">A</div>
+                <h3>Author A</h3>
+                <p>Institute A</p>
+              </div>
+              <div class="person-card">
+                <div class="avatar">B</div>
+                <h3>Author B</h3>
+                <p>Institute A</p>
+              </div>
+              <div class="person-card">
+                <div class="avatar">C</div>
+                <h3>Author C</h3>
+                <p>Institute B</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <span>© <span id="year"></span> Your Name</span>
+          <span>Research project page</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

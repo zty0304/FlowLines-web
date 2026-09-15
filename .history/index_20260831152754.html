@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Your Paper Title - SIGGRAPH Asia 2026">
+  <meta name="description" content="A research paper on structure-color disentangled anime hair synthesis via flow lines">
+  <meta name="keywords" content="anime, hair synthesis, computer graphics, neural networks">
+  <meta name="author" content="Author A, Author B, Author C">
+  
+  <title>Your Paper Title - SIGGRAPH Asia 2026 | Academic Research</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+  
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <style>
+    * {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    body {
+      background-color: #fafafa;
+    }
+    
+    .publication-title {
+      font-size: 2.5rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 20px !important;
+    }
+    
+    .publication-authors {
+      font-size: 1.1rem !important;
+    }
+    
+    .author-block {
+      margin: 5px 10px;
+    }
+    
+    .author-block a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    
+    .author-block a:hover {
+      text-decoration: underline;
+    }
+    
+    .author-block sup {
+      color: #666;
+    }
+    
+    .eql-cntrb {
+      display: block;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 10px;
+    }
+    
+    .publication-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    
+    .link-block {
+      display: inline-block;
+    }
+    
+    .external-link {
+      background-color: #363636 !important;
+      color: white !important;
+      border-radius: 4px !important;
+      padding: 10px 16px !important;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    
+    .external-link:hover {
+      background-color: #1a1a1a !important;
+    }
+    
+    .external-link .icon {
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .teaser {
+      background-color: white;
+      padding: 40px 0;
+    }
+    
+    .teaser img {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .teaser .subtitle {
+      margin-top: 20px;
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    .hero {
+      background-color: white;
+      padding: 60px 0;
+    }
+    
+    .hero.is-light {
+      background-color: #f5f5f5;
+    }
+    
+    .section {
+      background-color: white;
+      padding: 60px 0;
+    }
+    
+    .section.hero.is-light {
+      background-color: #f5f5f5;
+    }
+    
+    .title.is-3 {
+      font-size: 1.8rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 30px !important;
+      text-align: center;
+    }
+    
+    .content {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #333;
+    }
+    
+    .content p {
+      margin-bottom: 15px;
+    }
+    
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    
+    .bibtex-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .copy-bibtex-btn {
+      background-color: #363636;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.2s;
+    }
+    
+    .copy-bibtex-btn:hover {
+      background-color: #1a1a1a;
+    }
+    
+    #bibtex-code {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #0066cc;
+      overflow-x: auto;
+    }
+    
+    .footer {
+      background-color: white;
+      padding: 40px 0;
+      border-top: 1px solid #e0e0e0;
+    }
+    
+    .footer .content {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+    }
+    
+    .footer a {
+      color: #0066cc;
+    }
+    
+    @media (max-width: 768px) {
+      .publication-title {
+        font-size: 1.8rem !important;
+      }
+      
+      .publication-links {
+        gap: 10px;
+      }
+      
+      .external-link {
+        padding: 8px 12px !important;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<main id="main-content">
+      <div class="header-section">
+        <h1>Structure–Color Disentangled Anime Hair Synthesis via Flow Lines</h1>
+
+        <div class="authors-line">
+          <span><a href="#">Author A</a><sup>*</sup>, </span>
+          <span><a href="#">Author B</a><sup>*</sup>, </span>
+          <span><a href="#">Author C</a></span>
+        </div>
+
+        <div class="affiliation-line">
+          <span>Institute A</span>
+          <span>Institute B</span>
+        </div>
+
+        <div class="conference-line">
+          <span>SIGGRAPH Asia 2026</span>
+        </div>
+
+        <div class="equal-contribution">
+          <sup>*</sup>Indicates Equal Contribution
+        </div>
+
+        <div class="buttons-group">
+          <a href="#" class="btn btn-paper">
+            <span>📄</span>
+            <span>Paper</span>
+          </a>
+          <a href="#" class="btn btn-code">
+            <span>💻</span>
+            <span>Code</span>
+          </a>
+          <a href="#" class="btn btn-arxiv">
+            <span>📎</span>
+            <span>arXiv</span>
+          </a>
+          <a href="#" class="btn btn-dataset">
+            <span>🤗</span>
+            <span>Dataset</span>
+          </a>
+        </div>
+      </div>
+
+      <article class="paper">
+        <figure class="teaser-figure">
+          <div class="placeholder-img large"></div>
+        </figure>
+
+        <div class="intro-text">
+          <p>
+            Model weights are a direct product of the objective, optimization procedure, and training
+            data. Users upload models to public repositories, e.g., Hugging Face, which are often
+            disorganized and lack metadata on model functionality, pre-training checkpoints, and
+            training data. Weight-space learning treats model repositories as datasets where each
+            model is a data point. It studies how to design metanetworks, a special kind of neural
+            networks that process the weights of other models.
+          </p>
+        </div>
+
+        <section class="paper-section">
+          <h2>Abstract</h2>
+          <p>
+            The increasing availability of public models begs the question: can we train neural networks
+            that use other networks as input? Such models allow us to study different aspects of a given
+            neural network, for example, determining the categories in a model's training dataset. However,
+            machine learning on model weights is challenging as they often exhibit significant variation
+            unrelated to the models' semantic properties. Here, we identify a key property of real-world
+            models: most public models belong to a small set of <em>Model Trees</em>, where all models within
+            a tree are fine-tuned from a common ancestor. Within each tree there is less nuisance variation.
+            To address computational challenges, we introduce <em>Probing Experts (ProbeX)</em>, a lightweight
+            method specifically designed to learn from the weights of a single hidden model layer.
+          </p>
+        </section>
+
+        <section class="paper-section">
+          <h2>Learning within Model Trees</h2>
+          <figure class="section-figure">
+            <div class="placeholder-img"></div>
+          </figure>
+          <p>
+            We conduct 4 motivating experiments that illustrate the benefits of learning within Model
+            Trees. In each experiment, we train a linear classifier to predict the classes a ViT model
+            was fine-tuned on. First, we show that learning within Model Trees is significantly simpler
+            by comparing a metanetwork trained on models from the same tree with one trained on models
+            from different trees. Next, we demonstrate positive transfer within the same tree by showing
+            that adding more models from the same tree improves the performance. Surprisingly, we observe
+            negative transfer between Model Trees, where adding samples from other trees degrades
+            performance on a single tree.
+          </p>
+        </section>
+
+        <section class="paper-section">
+          <h2>Largest Model Trees on Hugging Face</h2>
+          <div class="section-content">
+            <figure class="section-figure">
+              <div class="placeholder-img"></div>
+            </figure>
+            <p>
+              We show the 10 largest Model Trees on Hugging Face. Our insight is that learning an expert
+              for each tree greatly simplifies weight-space learning. This is a practical setting as a few
+              large Model Trees dominate the landscape.
+            </p>
+          </div>
+        </section>
+
+        <section class="paper-section">
+          <h2>Probing Experts (ProbeX)</h2>
+          <figure class="section-figure">
+            <div class="placeholder-img"></div>
+          </figure>
+          <p>
+            Unlike conventional probing methods that operate only on inputs and outputs, our lightweight
+            architecture scales weight-space learning to large models by probing hidden model layers.
+            ProbeX begins by passing a set of learned probes through the input weight matrix. A projection
+            matrix, shared between all probes, reduces the dimensionality of the probe responses, followed
+            by a non-linear activation. Each probe response is then mapped to a probe encoding via a
+            per-probe encoder matrix. We sum the probe encodings to obtain the final model encoding, which
+            the predictor head maps to the task output.
+          </p>
+        </section>
+
+        <section class="paper-section">
+          <h2>Results</h2>
+          <p>
+            ProbeX achieves state-of-the-art results on the task of training category prediction, accurately
+            identifying the specific classes within a model's training dataset. Excitingly, ProbeX can also
+            align fine-tuned Stable Diffusion weights with language representations. This capability enables
+            a new task: zero-shot model classification, where models are classified via a text prompt describing
+            their training data.
+          </p>
+          <figure class="section-figure">
+            <div class="placeholder-img"></div>
+          </figure>
+        </section>
+
+        <section class="paper-section bibtex-section">
+          <div class="bibtex-header">
+            <h2>BibTeX</h2>
+            <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+          </div>
+          <pre id="bibtex"><code>@inproceedings{yourpaper2026,
+  title = {Structure--Color Disentangled Anime Hair Synthesis via Flow Lines},
+  author = {Author A and Author B and Author C},
+  booktitle = {SIGGRAPH Asia 2026 Conference Proceedings},
+  year = {2026}
+}</code></pre>
+        </section>
+
+        <div class="footer-note">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io/">Nerfies</a> project page.
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

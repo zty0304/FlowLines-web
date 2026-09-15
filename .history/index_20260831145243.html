@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Project page template for a SIGGRAPH Asia paper."
+    />
+    <title>Your Paper Title | SIGGRAPH Asia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand">SIGGRAPH Asia Project</div>
+        <nav>
+          <a href="#abstract">Abstract</a>
+          <a href="#overview">Overview</a>
+          <a href="#results">Results</a>
+          <a href="#citation">Citation</a>
+          <a href="#team">Team</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <div class="eyebrow">SIGGRAPH Asia 2026</div>
+            <h1>Your Paper Title Goes Here</h1>
+            <p class="authors">
+              Author A<sup>1</sup>, Author B<sup>1,2</sup>, Author C<sup>2</sup>
+            </p>
+            <div class="affiliations">
+              <span>Institution 1</span>
+              <span>Institution 2</span>
+            </div>
+            <div class="actions">
+              <a class="button primary" href="#paper">Paper</a>
+              <a class="button secondary" href="#video">Video</a>
+              <a class="button secondary" href="#code">Code</a>
+            </div>
+            <div class="meta-row">
+              <span>📄 PDF</span>
+              <span>🎥 Video</span>
+              <span>💻 Code</span>
+              <span>🧪 Dataset</span>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Teaser visual placeholder">
+            <div class="visual-card main">
+              <div class="mini-grid"></div>
+              <div class="chip chip-a">Input</div>
+              <div class="chip chip-b">Output</div>
+            </div>
+            <div class="visual-card side">
+              <h3>TL;DR</h3>
+              <p>
+                We present a method that enables fast, high-quality, and
+                controllable visual synthesis for real-world scenes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="abstract" class="content-section">
+        <div class="container two-col">
+          <div>
+            <h2>Abstract</h2>
+            <p>
+              In this paper, we introduce a novel framework for ... Replace this
+              paragraph with your actual abstract. Keep it concise and clear, and
+              highlight the main insight, technical contribution, and impact.
+            </p>
+            <p>
+              Our method combines ... to achieve ... while maintaining ... The
+              proposed approach is evaluated on ... and shows consistent
+              improvements over prior work.
+            </p>
+          </div>
+          <div class="info-panel">
+            <h3>Key Contributions</h3>
+            <ul>
+              <li>Novel formulation for ...</li>
+              <li>Efficient optimization / learning strategy</li>
+              <li>High-quality qualitative and quantitative results</li>
+              <li>Open-source implementation and datasets</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="overview" class="content-section alt-bg">
+        <div class="container">
+          <h2>Overview</h2>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <span class="feature-index">01</span>
+              <h3>Problem</h3>
+              <p>
+                Existing methods struggle with ... This limits ... in practical
+                scenarios.
+              </p>
+            </div>
+            <div class="feature-card">
+              <span class="feature-index">02</span>
+              <h3>Method</h3>
+              <p>
+                We propose ... by leveraging ... and optimizing ... under a
+                unified objective.
+              </p>
+            </div>
+            <div class="feature-card">
+              <span class="feature-index">03</span>
+              <h3>Result</h3>
+              <p>
+                Our system produces ... with improved fidelity, efficiency, and
+                controllability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="paper" class="content-section">
+        <div class="container">
+          <h2>Paper & Resources</h2>
+          <div class="resource-grid">
+            <a class="resource-card" href="https://example.com/paper.pdf" target="_blank" rel="noreferrer">
+              <span>📄</span>
+              <strong>Paper</strong>
+              <small>PDF / arXiv</small>
+            </a>
+            <a class="resource-card" href="https://example.com/video" target="_blank" rel="noreferrer">
+              <span>🎬</span>
+              <strong>Video</strong>
+              <small>Supplemental video</small>
+            </a>
+            <a class="resource-card" href="https://github.com/yourname/yourrepo" target="_blank" rel="noreferrer">
+              <span>💻</span>
+              <strong>Code</strong>
+              <small>Implementation</small>
+            </a>
+            <a class="resource-card" href="https://example.com/dataset" target="_blank" rel="noreferrer">
+              <span>🗂️</span>
+              <strong>Dataset</strong>
+              <small>Benchmark / data</small>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="content-section alt-bg">
+        <div class="container">
+          <h2>Key Results</h2>
+          <div class="results-grid">
+            <div class="result-card">
+              <div class="metric">+18.4%</div>
+              <p>Quality improvement over the strongest baseline.</p>
+            </div>
+            <div class="result-card">
+              <div class="metric">2.3×</div>
+              <p>Faster runtime than the conventional pipeline.</p>
+            </div>
+            <div class="result-card">
+              <div class="metric">95%</div>
+              <p>User preference in perceptual evaluation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="citation" class="content-section">
+        <div class="container narrow">
+          <h2>Citation</h2>
+          <pre>@inproceedings{yourpaper2026,
+  title = {Your Paper Title Goes Here},
+  author = {Author A and Author B and Author C},
+  booktitle = {ACM SIGGRAPH Asia Conference Proceedings},
+  year = {2026}
+}</pre>
+        </div>
+      </section>
+
+      <section id="team" class="content-section alt-bg">
+        <div class="container">
+          <h2>Team</h2>
+          <div class="team-grid">
+            <div class="person">
+              <div class="avatar">A</div>
+              <h3>Author A</h3>
+              <p>Role / affiliation</p>
+            </div>
+            <div class="person">
+              <div class="avatar">B</div>
+              <h3>Author B</h3>
+              <p>Role / affiliation</p>
+            </div>
+            <div class="person">
+              <div class="avatar">C</div>
+              <h3>Author C</h3>
+              <p>Role / affiliation</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© <span id="year"></span> Your Name</span>
+        <span>Project page template for SIGGRAPH Asia</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

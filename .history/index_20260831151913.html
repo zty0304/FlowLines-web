@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Academic Research Paper Project Page" />
+    <title>Your Paper Title</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="container">
+        <header class="hero">
+          <div class="badge">SIGGRAPH Asia 2026</div>
+          <h1>Structure–Color Disentangled Anime Hair Synthesis via Flow Lines</h1>
+
+          <div class="authors">
+            <span>Author A<sup>1</sup></span>
+            <span>Author B<sup>1,2</sup></span>
+            <span>Author C<sup>2</sup></span>
+          </div>
+
+          <div class="affiliations">
+            <span>Institute A</span>
+            <span>Institute B</span>
+          </div>
+
+          <div class="links">
+            <a href="https://example.com/paper.pdf" target="_blank" rel="noreferrer">[Paper]</a>
+            <a href="https://example.com/video" target="_blank" rel="noreferrer">[Video]</a>
+            <a href="https://github.com/yourname/yourrepo" target="_blank" rel="noreferrer">[Code]</a>
+            <a href="https://example.com/dataset" target="_blank" rel="noreferrer">[Data]</a>
+          </div>
+        </header>
+
+        <section class="teaser">
+          <div class="teaser-figure">
+            <div class="figure-panel figure-left"></div>
+            <div class="figure-panel figure-right"></div>
+          </div>
+          <div class="teaser-copy">
+            <h2>Overview</h2>
+            <p>
+              We introduce a structure-aware rendering framework for stylized hair synthesis,
+              explicitly disentangling geometry and color while preserving natural motion and
+              coherence across views.
+            </p>
+            <ul>
+              <li>Flow-guided structure modeling</li>
+              <li>Color-preserving detail synthesis</li>
+              <li>Improved controllability and realism</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="abstract" class="section">
+          <h2>Abstract</h2>
+          <p>
+            We present a method for generating coherent anime hair with disentangled structure and
+            color attributes. The core idea is to separately model flow-based geometric structure and
+            appearance-based color information so that each component can be controlled and optimized
+            independently. This allows our approach to preserve detailed strand motion while avoiding
+            color leakage and visual artifacts. Extensive experiments demonstrate that the proposed
+            framework achieves strong performance on quality, controllability, and stability compared
+            with recent baselines.
+          </p>
+        </section>
+
+        <section id="method" class="section">
+          <h2>Method</h2>
+          <div class="card-grid">
+            <article class="card">
+              <div class="card-index">01</div>
+              <h3>Structure Modeling</h3>
+              <p>
+                We estimate flow-aware hair structures that capture continuity, direction, and local
+                variation across the strand field.
+              </p>
+            </article>
+            <article class="card">
+              <div class="card-index">02</div>
+              <h3>Color Disentanglement</h3>
+              <p>
+                Appearance cues are decoupled from geometric flow to preserve hue consistency while
+                retaining expressive highlight transitions.
+              </p>
+            </article>
+            <article class="card">
+              <div class="card-index">03</div>
+              <h3>Consistent Rendering</h3>
+              <p>
+                A joint optimization stage enforces spatio-temporal coherence and reduces identity drift
+                during reconstruction and synthesis.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="results" class="section">
+          <h2>Results</h2>
+          <div class="stats">
+            <div class="stat">
+              <strong>+18.4%</strong>
+              <span>improvement over the best baseline</span>
+            </div>
+            <div class="stat">
+              <strong>2.3×</strong>
+              <span>faster synthesis</span>
+            </div>
+            <div class="stat">
+              <strong>95%</strong>
+              <span>preferred by users</span>
+            </div>
+          </div>
+        </div>
+
+        <section class="section">
+          <h2>Resources</h2>
+          <div class="resources">
+            <a href="https://example.com/paper.pdf" target="_blank" rel="noreferrer">Paper</a>
+            <a href="https://example.com/video" target="_blank" rel="noreferrer">Video</a>
+            <a href="https://github.com/yourname/yourrepo" target="_blank" rel="noreferrer">Code</a>
+            <a href="https://example.com/dataset" target="_blank" rel="noreferrer">Data</a>
+          </div>
+        </section>
+
+        <section id="citation" class="section">
+          <h2>BibTeX</h2>
+          <pre>@inproceedings{yourpaper2026,
+  title = {Structure--Color Disentangled Anime Hair Synthesis via Flow Lines},
+  author = {Author A and Author B and Author C},
+  booktitle = {SIGGRAPH Asia 2026 Conference Proceedings},
+  year = {2026}
+}</pre>
+        </section>
+
+        <section id="team" class="section">
+          <h2>Authors</h2>
+          <div class="team">
+            <div class="person">
+              <div class="avatar">A</div>
+              <div>
+                <strong>Author A</strong>
+                <span>Institute A</span>
+              </div>
+            </div>
+            <div class="person">
+              <div class="avatar">B</div>
+              <div>
+                <strong>Author B</strong>
+                <span>Institute A</span>
+              </div>
+            </div>
+            <div class="person">
+              <div class="avatar">C</div>
+              <div>
+                <strong>Author C</strong>
+                <span>Institute B</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <span>© <span id="year"></span> Your Name</span>
+          <span>Project Page</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
