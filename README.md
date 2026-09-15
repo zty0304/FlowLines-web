@@ -13,14 +13,14 @@ We further present a flow line guided hair synthesis framework for anime charact
 - Paper: TBD
 - arXiv: TBD
 - Code: TBD
-- Dataset: [Open-source dataset link](https://jstorage.box.com/v/FlowlinesData)
-- Project page: [Current webpage](https://github.com/)
+- Dataset: [Open-source dataset link]()
+- Project page: [Current webpage](https://zty0304.github.io/FlowLines-web/)
 
 ## Open-source dataset
 
 We release the dataset used in this work through an external open-source link for reproducibility and community use.
 
-- Dataset: [Open-source dataset](https://jstorage.box.com/v/FlowlinesData)
+- Dataset: [Open-source dataset]()
 
 The dataset includes paired examples and flow-line annotations to support hair synthesis and editing research.
 
