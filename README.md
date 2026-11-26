@@ -43,7 +43,7 @@ The current repository does not provide the trained model weights or CKPT files 
   booktitle={SIGGRAPH Asia 2026 Conference Proceedings},
   year={2026},
   pages={},
-  doi={}
+  doi={https://doi.org/10.1145/3829340.3842227}
 }
 ```
 
