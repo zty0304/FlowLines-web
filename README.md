@@ -37,13 +37,12 @@ The current repository does not provide the trained model weights or CKPT files 
 ## Citation
 
 ```bibtex
-@inproceedings{Zhang2026FlowLines,
-  title={Structure-Color Disentangled Anime Hair Synthesis via Flow Lines},
-  author={Tianyu Zhang and I-Chao Shen and Haoran Xie},
-  booktitle={SIGGRAPH Asia 2026 Conference Proceedings},
-  year={2026},
-  pages={},
-  doi={https://doi.org/10.1145/3829340.3842227}
+@inproceedings{zhang2026structure,
+  title={Structure--Color Disentangled Anime Hair Synthesis via Flow Line},
+  author={Zhang, Tianyu and Shen, I-Chao and Xie, Haoran},
+  booktitle={Proceedings of the SIGGRAPH Asia 2026 Conference Papers},
+  pages={1--12},
+  year={2026}
 }
 ```
 
