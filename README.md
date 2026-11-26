@@ -2,38 +2,6 @@
 
 This repository contains the project page for our SIGGRAPH Asia 2026 paper, focused on controllable anime hair synthesis using flow-line-guided structure and color control.
 
-## Overview
-
-Anime hairstyles convey the personality and emotion of a character. Existing input modalities are not well suited for anime hair editing, as they may fail to capture the fine-grained wisp structure that characterizes anime hairstyles. To solve this issue, we introduce flow line, a sparse representation that directly encodes wisp geometry and color intent. Flow lines align naturally with the loose gestural strokes used in early-stage anime character design.
-
-We further present a flow line guided hair synthesis framework for anime characters, featuring dual-LoRA design with dedicated structure and color branches, combined with region-aware supervision, to prevent interference between geometry and appearance during hairstyle synthesis. To support training and evaluation, we construct a novel dataset consisting of paired character images before and after hairstyle synthesis, together with flow line sketches specifying the desired hairstyle.
-
-## Links
-
-- Paper: TBD
-- arXiv: TBD
-- Code: TBD
-- Dataset: [Open-source dataset link]()
-- Project page: [Current webpage](https://zty0304.github.io/FlowLines-web/)
-
-## Open-source dataset
-
-We release the dataset used in this work through an external open-source link for reproducibility and community use.
-
-- Dataset: [Open-source dataset]()
-
-The dataset includes paired examples and flow-line annotations to support hair synthesis and editing research.
-
-## Model and checkpoints
-
-The current repository does not provide the trained model weights or CKPT files yet.
-
-- Model checkpoint release: Coming Soon
-
-
-## Repository structure
-
-
 ## Citation
 
 ```bibtex
